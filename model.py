@@ -35,6 +35,7 @@ cursor.execute(query, (username, password))
 """
 
 import connection
+import forms
 
 localDatabase = connection.database
 cursor = localDatabase.cursor()
@@ -53,7 +54,4 @@ def login(username, password):
             print(row)
     else:
         print("Failed to login")
-
-username = input("Username: ")
-password = input("Password: ")
-login(username, password)
+        forms.form()
