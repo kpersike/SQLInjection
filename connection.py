@@ -19,6 +19,8 @@ def cursorTable():
         "ps_pass)"
     )
 
+cursorTable()
+
 count = list(cursor.execute("SELECT COUNT(id_user) from tb_user"))[0][0] # Only for this moment ;)
 
 if(count == 0):
