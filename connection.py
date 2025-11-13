@@ -19,10 +19,10 @@ def cursorTable():
         "ps_pass)"
     )
 
-    count = list(cursor.execute("SELECT COUNT(id_user) from tb_user"))[0] # Only for this moment ;)
+count = list(cursor.execute("SELECT COUNT(id_user) from tb_user"))[0][0] # Only for this moment ;)
 
-    if(count == 0):
-        for i in range(0, len(users)):
-            cursor.execute("INSERT INTO tb_user VALUES ('"+str(users[i]['id'])+"', '"+users[i]['nm_username']+"', '"+users[i]['ds_email']+"', '"+users[i]['ps_pass']+"')")
+if(count == 0):
+    for i in range(0, len(users)):
+        cursor.execute("INSERT INTO tb_user VALUES ('"+str(users[i]['id'])+"', '"+users[i]['nm_username']+"', '"+users[i]['ds_email']+"', '"+users[i]['ps_pass']+"')")
 
-    database.commit()
+database.commit()
